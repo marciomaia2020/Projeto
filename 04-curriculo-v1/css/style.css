@@ -1,0 +1,35 @@
+body {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+  }
+  button{
+    cursor: ponter;
+  }
+  table{
+    margin: auto;
+  }
+  th, td{
+    padding: 6px;
+  }
+  /*even = par
+  edd = impar*/
+  tbody tr:nth-child(even){
+    background-color: #ddd;
+  }
+  tbody tr:hover{
+    font-weight: bold;
+    user-select: none;/*Não permite a seleção*/
+    cursor: default;
+  }
+  .tittle{
+    color: red;
+  }
+  .autor{
+    font-style: italic;
+    text-align: right;
+  }

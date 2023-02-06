@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!--    <script>
+      console.log("Teste de saída do java script");
+    </script>
+  -->
+
+    <!--Crie sempre uma função start-->
+    <script>
+      function start() {
+        //console.log("start");
+        //console.log(calculateIMC(79, 1.69));
+        //console.log(calculateIMC(100, 1.69));
+        var buttonCalculateImc = document.querySelector('#button-calculate-imc');
+        
+        }
+      function calculateIMC(weight, height) {
+        return weight / (height * height);
+        }
+
+    
+       start();
+    </script>
+
+    <title>IMC</title>
+  </head>
+  <body>
+    <h1>IMC</h1>
+
+    <p>
+      <label for="input-weight">Peso (kg):&nbsp;</label><br />
+      <input id="input-weight " type="text" />
+    </p>
+
+    <p>
+      <label for="input-height">Altura(m):</label><br />
+      <input id="input-height" type="text" />
+    </p>
+
+    <button id="buttonCalculateImc">Calcular IMC</button>
+
+    <p id="paragraph-resultado">o IMC desses dados é <strong>25.02</strong></p>
+
+    <script defer src="./js/script.js"></script>
+  </body>
+</html>
