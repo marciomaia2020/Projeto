@@ -8,7 +8,7 @@ let savedGames = [];
 
 
 //Objeto
-var state = { borad: [], currentGame: [], savedGames: [] };
+var state = { board: [], currentGame: [], savedGames: [] };
 
 
 //Criar a função start
@@ -27,14 +27,17 @@ function start (){
     addNumberToGame(1);
     addNumberToGame(2);
     addNumberToGame(3);
-    addNumberToGame(23);
+    addNumberToGame(4);
     addNumberToGame(5);
-    addNumberToGame(10);
+    addNumberToGame(6);
+    
+    
+ 
     //addNumberToGame(11); não será inserido apos fazer a length
 
  console.log(state.currentGame);
  }
- start();
+ 
 
 function addNumberToGame(numberToAdd){
     //Não deixa o usuário inserir numeros menores que 1 e maiores que 60
@@ -43,11 +46,48 @@ function addNumberToGame(numberToAdd){
         return;
     }
     //Não deixa o usuário inserir mais que 6 numeros
-    if (state.currentGame.length >= 6){
+    if (state.currentGame.length >= 6) {
         console.error("O jogo já está completo");
         return;//não esqueça de inserir o return senão ele insere o debaixo..
     }
+    //Funcão para evitar que seja digitado números repetidos...
+    function isNunmberInGame(numberToCheck) {
+        if (state.currentGame.includes(numberToCheck)) {
+            return true;
+        }
+            return false;
 
-    state.currentGame.push(numberToAdd);
+     //O código acima poderia ser escrito assim
+     //return state.currentGame.includes(numberToCheck);
 
+    }
+     //Testando e mostrando se existe numeros repetidos ou não
+     if (isNunmberInGame(numberToAdd)){
+        console.error('O número '  +  numberToAdd , 'já foi inserido no jogo, por favor, escolha outro!');
+            return;
+    }
+
+    //Funcão para remover algun numero indesejado do array
+    function removeNumberFromGame(numberToRemove){
+        var newGame = [];
+
+        for (var i = 0; i < state.currentGame.length; i++){
+            //Variável atribuida ao valor de i - pra não ficar repitindo e sim usar a variável
+            var currentNumber = state.currentGame[i];
+            //Testando - se o currentNumber bateu com o NumberToRemove então eu não faço nada
+            if (currentNumber === numberToRemove){
+                continue; //não faz nada
+            }
+            //Se não for que preciso adicionar no novo jogo então
+            newGame.push(currentNumber);
+        }
+             //E no final  eu troco ou seja o estado muda para newGame
+             state.currentGame = newGame; 
+    }
+    //Insere os numeros no array numberToAdd
+   state.currentGame.push(numberToAdd);
 }
+
+
+
+start();
