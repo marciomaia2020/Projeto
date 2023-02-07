@@ -4,21 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css">
-    
-    <script>
-    console.log('Teste de saída do java script')
-    </script>
-    
-    <title>Projeto Base</title>
-    
+    <link rel="stylesheet" href="./css/style.css" />
 
+    <title>Mega Sena</title>
   </head>
   <body>
-    <h1>Projeto Base</h1>
+    <header>
+      <h1>Mega Sena</h1>
+    </header>
 
+    <main>
+      <!--Vai receber o quadro de numeros para o usuário marcar ou jogar por exemplo-->
+      <div id="megasena-numbers"></div>
+      <!--Vai ter opção de criar um novo jogo, gerar jogo aleatório e salvar o jogo-->
+      <div id="megasena-buttons"></div>
+      <!--Vai exibir os jogos salvos-->
+      <div id="megasena-saved-games"></div>
+    </main>
 
+<!--HTML terminado agora o foco será no java script-->
 
-    <!-- <script defer scr="./js/script.js"></script> -->
+    <script defer src="./js/script.js"></script>
   </body>
 </html>
