@@ -119,13 +119,17 @@ function renderSavedGames() {
     for (var i = 0; i < state.savedGames.length; i++) {
       var currentGame = state.savedGames[i];
 
+      
       var liGame = document.createElement('li');
       liGame.textContent = currentGame.join(', ');
+   
 
-      ulSavedGames.appendChild(liGame);
+     ulSavedGames.appendChild(liGame);
     }
 
     divSavedGames.appendChild(ulSavedGames);
+    
+
   }
 }
 
@@ -146,6 +150,9 @@ function addNumberToGame(numberToAdd) {
   }
 
   state.currentGame.push(numberToAdd);
+  state.currentGame.sort();//esta linha faz a ordenação
+
+
 }
 
 function removeNumberFromGame(numberToRemove) {
@@ -207,6 +214,8 @@ function randomGame() {
     addNumberToGame(randomNumber);
   }
 
+
+  state.currentGame.sort(); //esta linha faz a ordenação
   console.log(state.currentGame);
   render();
 }
