@@ -10,7 +10,7 @@ button {
 }
 
 .numbers {
-  border: 1px solid gray;
+  border: 1px solid black;
   padding: 10px;
   list-style-type: none;
   font-family: monospace;
