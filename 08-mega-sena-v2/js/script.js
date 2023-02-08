@@ -1,9 +1,29 @@
 var state = { board: [], currentGame: [], savedGames: [] };
 
 function start() {
+  readLocalStorage();//LocalStorag
   createBoard();
   newGame();
 }
+
+//LocalStorage (Progressig and Hands) Este pega o valor
+function readLocalStorage() {
+  if (!window.localStorage) {//testanto de o windows tem o LocalStrorage
+    return;
+  }
+  var savedGamesFromLocalStorage = window.localStorage.getItem('saved-games');
+  console.log(savedGamesFromLocalStorage);
+
+  if (savedGamesFromLocalStorage) {
+    state.savedGames = JSON.parse(savedGamesFromLocalStorage);
+  }
+}
+
+//LocalStorage Este salva o valor
+function writeToLocalStorage(){
+  window.localStorage.setItem('saved-games', JSON.stringify(state.savedGames));
+}
+
 
 function createBoard() {
   state.board = [];
@@ -193,6 +213,7 @@ function saveGame() {
   }
 
   state.savedGames.push(state.currentGame);
+  writeToLocalStorage()//LocalStorage
   newGame();
 
   
